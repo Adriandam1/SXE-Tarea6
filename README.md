@@ -11,16 +11,70 @@ Se valorará:
 El uso de docker-compose. 
 Claridad en la explicación
 
-## 1. Descargar la imagen "Prestashop" y comprobar que está en tu equipo
+## 1. Descargar la imagen "Prestashop" y comprobar que está en tu equipo.
 ```bash
 docker pull prestashop/prestashop
 docker images
 ```
-
 ![presta1](https://github.com/user-attachments/assets/54b1ecec-d529-46c1-b1da-ba36ae44f976)
 
+## 2. Crear la carpeta con el archivo docker-compose.
+```bash
+#Creamos una carpeta donde vamos a almacenar el docker compose
+mkdir compose_prestashop
+```
 
+## 3. Configuramos nuestro archivo docker-compose.
+```bash
+nano compose_prestashop/docker-compose.yml
+```
+En mi caso:
+```bash
+#Configuracion servicio mysql para prestashop
+services:
+  db:
+    image: mariadb:10.11.2
+    volumes:
+    - db_data_prestashop:/var/lib/mysql
+    restart: no
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: prestashop
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
 
+#Configuracion prestashop
+ prestashop:
+    depends_on:
+      - db
+    image: prestashop/prestashop:latest
+    ports:
+      - "8800:80"
+    restart: no
+    environment:
+      PS_DEV_MODE: 0
+      PS_HOST_MODE: 0
+      PS_DEMO_MODE: 0
+      DB_SERVER: db
+      DB_USER: admin
+      DB_PASSWD: admin
+      DB_PREFIX: ps_
+      DB_NAME: prestashop
+      PS_LANGUAGE: en
+      PS_SHOP_NAME: mi_super_tienda
+      PS_DOMAIN: "localhost:8800"
+    networks:
+      - prestashop_network
+
+volumes:
+  db_data_prestashop:
+
+networks:
+    prestashop_network:
+```
+Imagen del archivo(conectado por ssh por el CMD de Windows):
+
+![presta2](https://github.com/user-attachments/assets/8faded6d-cf1f-41ed-a113-6432763bcef5)
 
 
 
