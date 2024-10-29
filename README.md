@@ -30,12 +30,14 @@ nano compose_prestashop/docker-compose.yml
 ```
 En mi caso:
 ```bash
-#Configuracion servicio mysql para prestashop
+# Configuracion servicio mysql para prestashop
+version: '3.8'  # Especifica la versión de Docker Compose
+
 services:
   db:
     image: mariadb:10.11.2
     volumes:
-    - db_data_prestashop:/var/lib/mysql
+      - db_data_prestashop:/var/lib/mysql
     restart: no
     environment:
       MYSQL_ROOT_PASSWORD: admin
@@ -43,8 +45,8 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
 
-#Configuracion prestashop
- prestashop:
+  # Configuracion prestashop
+  prestashop:
     depends_on:
       - db
     image: prestashop/prestashop:latest
@@ -70,7 +72,8 @@ volumes:
   db_data_prestashop:
 
 networks:
-    prestashop_network:
+  prestashop_network:
+
 ```
 Imagen del archivo(conectado por ssh por el CMD de Windows):
 
@@ -89,6 +92,20 @@ Utilizando nuestra ip y el puerto que hemos elegido:
 http://192.168.1.131:8800/
 ```
 ![presta4](https://github.com/user-attachments/assets/429fd755-e16c-4c00-be27-8c83db0d306e)
+
+
+Introducimos nuestro credenciales:
+<!-- Para el ejemplo la contraseña es ejemplo123 -->
+![presta5](https://github.com/user-attachments/assets/aed04d9e-4180-49a6-bf4f-50dd8d13bbc4)
+
+
+Configuramos la conexión de la base de datos con nuestros credenciales, el puerto ponemos el por defecto:
+
+![presta6](https://github.com/user-attachments/assets/a4869f28-3512-447b-a28f-19cf51ce814b)
+
+
+
+
 
 
 
