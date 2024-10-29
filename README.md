@@ -76,6 +76,12 @@ Imagen del archivo(conectado por ssh por el CMD de Windows):
 
 ![presta2](https://github.com/user-attachments/assets/8faded6d-cf1f-41ed-a113-6432763bcef5)
 
+## 3. Arrancar Prestashop:
+```bash
+sudo docker-compose up -d
+```
+
+![presta3](https://github.com/user-attachments/assets/a4ef536b-b9a1-439e-9566-2d2f37a35c08)
 
 
 
