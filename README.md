@@ -76,14 +76,19 @@ Imagen del archivo(conectado por ssh por el CMD de Windows):
 
 ![presta2](https://github.com/user-attachments/assets/8faded6d-cf1f-41ed-a113-6432763bcef5)
 
-## 3. Arrancar Prestashop:
+## 4. Arrancar Prestashop:
 ```bash
 sudo docker-compose up -d
 ```
 
 ![presta3](https://github.com/user-attachments/assets/a4ef536b-b9a1-439e-9566-2d2f37a35c08)
 
-
+## 5. Acceder a Prestasgop:
+Utilizando nuestra ip y el puerto que hemos elegido:
+```bash
+http://192.168.1.131:8800/
+```
+![presta4](https://github.com/user-attachments/assets/429fd755-e16c-4c00-be27-8c83db0d306e)
 
 
 
