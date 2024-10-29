@@ -10,3 +10,26 @@ Se valorará:
 
 El uso de docker-compose. 
 Claridad en la explicación
+
+## 1. Descargar la imagen "Prestashop" y comprobar que está en tu equipo
+```bash
+docker pull prestashop/prestashop
+docker images
+```
+
+![presta1](https://github.com/user-attachments/assets/54b1ecec-d529-46c1-b1da-ba36ae44f976)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
