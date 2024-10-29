@@ -103,6 +103,17 @@ Configuramos la conexión de la base de datos con nuestros credenciales, el puer
 
 ![presta6](https://github.com/user-attachments/assets/a4869f28-3512-447b-a28f-19cf51ce814b)
 
+![presta7](https://github.com/user-attachments/assets/5627570a-2e8e-4952-a866-e64721760048)
+
+Para poder acceder a la tienda tenemos que eliminar la carpeta install y renombrar la carpeta admin dentro del contenedor del prestashop:
+```bash
+docker exec -it <nombre_o_id_del_contenedor_prestashop> rm -rf /var/www/html/install
+docker exec -it <nombre_o_id_del_contenedor_prestashop> mv /var/www/html/admin /var/www/html/admin
+```
+Podriamos acceder con nuestras credenciales a: 
+http://192.168.1.46/admin
+
+
 
 
 
