@@ -10,21 +10,21 @@ Se valorará:
 
 El uso de docker-compose. 
 Claridad en la explicación
-
+<!--
 ## 1. Descargar la imagen "Prestashop" y comprobar que está en tu equipo.
 ```bash
 docker pull prestashop/prestashop
 docker images
 ```
 ![presta1](https://github.com/user-attachments/assets/54b1ecec-d529-46c1-b1da-ba36ae44f976)
-
-## 2. Crear la carpeta con el archivo docker-compose.
+-->
+## 1. Crear la carpeta con el archivo docker-compose.
 ```bash
 #Creamos una carpeta donde vamos a almacenar el docker compose
 mkdir compose_prestashop
 ```
 
-## 3. Configuramos nuestro archivo docker-compose.
+## 2. Configuramos nuestro archivo docker-compose.
 ```bash
 nano compose_prestashop/docker-compose.yml
 ```
@@ -79,14 +79,14 @@ Imagen del archivo(conectado por ssh por el CMD de Windows):
 
 ![presta2](https://github.com/user-attachments/assets/8faded6d-cf1f-41ed-a113-6432763bcef5)
 
-## 4. Arrancar Prestashop:
+## 3. Arrancar Prestashop:
 ```bash
 sudo docker-compose up -d
 ```
 
 ![presta3](https://github.com/user-attachments/assets/a4ef536b-b9a1-439e-9566-2d2f37a35c08)
 
-## 5. Acceder a Prestasgop:
+## 4. Acceder a Prestasgop:
 Utilizando nuestra ip y el puerto que hemos elegido:
 ```bash
 http://192.168.1.131:8800/
