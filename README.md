@@ -36,6 +36,8 @@ version: '3.8'  # Especifica la versión de Docker Compose
 services:
   db:
     image: mariadb:10.11.2
+    ports:
+      - "3307:3306"
     volumes:
       - db_data_prestashop:/var/lib/mysql
     restart: no
@@ -77,7 +79,8 @@ networks:
 ```
 Imagen del archivo(conectado por ssh por el CMD de Windows):
 
-![presta2](https://github.com/user-attachments/assets/8faded6d-cf1f-41ed-a113-6432763bcef5)
+![presta2](https://github.com/user-attachments/assets/f484ba4c-828e-45f9-8683-3e335cf1cd20)
+
 
 ## 3. Arrancar Prestashop:
 ```bash
@@ -94,24 +97,52 @@ http://192.168.1.131:8800/
 ![presta4](https://github.com/user-attachments/assets/429fd755-e16c-4c00-be27-8c83db0d306e)
 
 
-Introducimos nuestro credenciales:
+### Introducimos nuestro credenciales:
 <!-- Para el ejemplo la contraseña es ejemplo123 -->
 ![presta5](https://github.com/user-attachments/assets/aed04d9e-4180-49a6-bf4f-50dd8d13bbc4)
 
 
-Configuramos la conexión de la base de datos con nuestros credenciales, el puerto ponemos el por defecto:
+### Configuramos la conexión de la base de datos con nuestros credenciales, el puerto ponemos el por defecto:
 
-![presta6](https://github.com/user-attachments/assets/a4869f28-3512-447b-a28f-19cf51ce814b)
+![prestarreglado1](https://github.com/user-attachments/assets/ec7f5b04-0de2-4257-a113-0ccfc85566f9)
 
-![presta7](https://github.com/user-attachments/assets/5627570a-2e8e-4952-a866-e64721760048)
 
-Para poder acceder a la tienda tenemos que eliminar la carpeta install y renombrar la carpeta admin dentro del contenedor del prestashop:
-```bash
+### Se instala
+
+![pretsaaaaaaaaaaaaa](https://github.com/user-attachments/assets/44893a06-f8f3-4599-b85f-28e216929d0d)
+
+
+### Queda correcto:
+
+![ptressssssss222222222222222](https://github.com/user-attachments/assets/6ed9b6e9-b07e-4bca-8467-196f4715db76)
+
+### Comprobamos la tienda:
+
+![prestatienda](https://github.com/user-attachments/assets/938f07e9-57de-424c-a8ce-9dc54f67ac6f)
+
+
+
+
+
+### Para poder acceder a la tienda tenemos que eliminar la carpeta install y renombrar la carpeta admin dentro del contenedor del prestashop:
+<!--
 docker exec -it <nombre_o_id_del_contenedor_prestashop> rm -rf /var/www/html/install
 docker exec -it <nombre_o_id_del_contenedor_prestashop> mv /var/www/html/admin /var/www/html/admin
+-->
+```bash
+docker exec -it compose_prestashop-prestashop-1 rm -rf /var/www/html/install
+docker exec -it compose_prestashop-prestashop-1 mv /var/www/html/admin /var/www/html/admin123
 ```
 Podriamos acceder con nuestras credenciales a: 
-http://192.168.1.46/admin
+http://192.168.1.131:8800/admin123
+
+![prestaAdmin](https://github.com/user-attachments/assets/5e8f51aa-ec15-45e3-ab4a-9845b3f5a9ee)
+
+### Vemos la vista de admin:
+
+![prestaAdmin2](https://github.com/user-attachments/assets/c46d9782-8016-458a-b31f-d80a84dc49e2)
+
+
 
 
 
