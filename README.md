@@ -124,7 +124,7 @@ http://192.168.1.131:8800/
 
 
 
-### Para poder acceder a la tienda tenemos que eliminar la carpeta install y renombrar la carpeta admin dentro del contenedor del prestashop:
+### Eliminar la carpeta install y renombrar la carpeta admin dentro del contenedor del prestashop:
 <!--
 docker exec -it <nombre_o_id_del_contenedor_prestashop> rm -rf /var/www/html/install
 docker exec -it <nombre_o_id_del_contenedor_prestashop> mv /var/www/html/admin /var/www/html/admin
