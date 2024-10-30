@@ -89,7 +89,7 @@ sudo docker-compose up -d
 
 ![presta3](https://github.com/user-attachments/assets/a4ef536b-b9a1-439e-9566-2d2f37a35c08)
 
-## 4. Acceder a Prestasgop:
+## 4. Acceder a Prestashop:
 Utilizando nuestra ip y el puerto que hemos elegido:
 ```bash
 http://192.168.1.131:8800/
