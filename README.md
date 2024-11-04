@@ -31,7 +31,6 @@ nano compose_prestashop/docker-compose.yml
 En mi caso:
 ```bash
 # Configuracion servicio mysql para prestashop
-version: '3.8'  # Especifica la versión de Docker Compose
 
 services:
   db:
